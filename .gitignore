@@ -2,3 +2,4 @@ Bot_env/
 *.pyc
 Dialog_Flow.ipynb
 .ipynb_checkpoints/
+client.json

@@ -4,15 +4,16 @@ from telegram.ext import Updater,CommandHandler,MessageHandler,Filters,Dispatche
 from telegram import Bot,Update,ReplyKeyboardMarkup
 from utils import get_reply,fetch_news,topic_keyboard
 import os
-link= os.environ['url_link']
 
+
+link=os.environ['url_link']
+token=os.environ['token']
+print(link)
 # enable logging
 # General Logging For Any Telegram Bot Program
 logging.basicConfig(format='%(asctime)s - %(name)s -%(levelname)s -%(message)s',
                     level=logging.INFO)
 logger=logging.getLogger(__name__)
-
-Token='6546360004:AAH8Un-PTNxzCAR_BgRVG7X1-rc3f27e824'
 
 app=Flask(__name__)
 
