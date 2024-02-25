@@ -3,6 +3,8 @@ from flask import Flask,request
 from telegram.ext import Updater,CommandHandler,MessageHandler,Filters,Dispatcher,Handler
 from telegram import Bot,Update,ReplyKeyboardMarkup
 from utils import get_reply,fetch_news,topic_keyboard
+import os
+link= os.environ['url_link']
 
 # enable logging
 # General Logging For Any Telegram Bot Program
@@ -16,7 +18,7 @@ app=Flask(__name__)
 
 @app.route('/')
 def index():
-    return 'Hello ! '
+    return 'Telegram News Bot By Samarth'
 
 @app.route(f'/{Token}',methods=['GET','POST'])
 def webhook():
@@ -66,7 +68,7 @@ def error(bot,update):
     
 bot=Bot(Token)
 try:
-    bot.set_webhook(f"https://0a6e-2405-201-303b-101f-44d7-714e-4139-4939.ngrok-free.app/"+Token)
+    bot.set_webhook(f"{link}"+Token)
 except Exception as e:
     print(e)
 dp=Dispatcher(bot,None)
